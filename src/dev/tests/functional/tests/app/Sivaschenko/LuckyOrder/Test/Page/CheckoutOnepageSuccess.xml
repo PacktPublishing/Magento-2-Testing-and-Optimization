@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/pages.xsd">
+  <page name="CheckoutOnepageSuccess" mca="checkout/onepage/success" module="Magento_Checkout">
+    <block name="mainColumn" class="Sivaschenko\LuckyOrder\Test\Block\MainColumn" locator=".column.main" strategy="css selector"/>
+  </page>
+</config>

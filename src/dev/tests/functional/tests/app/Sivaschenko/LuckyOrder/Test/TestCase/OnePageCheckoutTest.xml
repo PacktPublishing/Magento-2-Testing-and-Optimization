@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/variations.xsd">
+    <testCase name="Magento\Checkout\Test\TestCase\OnePageCheckoutTest" summary="OnePageCheckout within Offline Payment Methods" ticketId="MAGETWO-27485">
+        <variation name="OnePageCheckoutTestLuckyOrderVariation" summary="Lucky order message on success page">
+            <data name="configData" xsi:type="string">checkmo,freeshipping</data>
+            <data name="products" xsi:type="string">catalogProductSimple::lucky_order</data>
+            <data name="checkoutMethod" xsi:type="string">guest</data>
+            <data name="customer/dataset" xsi:type="string">default</data>
+            <data name="shippingAddress/dataset" xsi:type="string">US_address_1</data>
+            <data name="shipping/shipping_service" xsi:type="string">Free Shipping</data>
+            <data name="shipping/shipping_method" xsi:type="string">Free</data>
+            <data name="payment/method" xsi:type="string">checkmo</data>
+            <constraint name="Magento\Checkout\Test\Constraint\AssertOrderSuccessPlacedMessage" />
+            <constraint name="Sivaschenko\LuckyOrder\Test\Constraint\AssertLuckyOrderMessage" />
+        </variation>
+    </testCase>
+</config>
